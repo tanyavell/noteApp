@@ -5,7 +5,6 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 
 import com.example.nos951.noteapplication.NoteRepository;
-import com.example.nos951.noteapplication.entity.Item;
 import com.example.nos951.noteapplication.entity.Note;
 
 import java.util.List;
@@ -13,16 +12,16 @@ import java.util.List;
 public class NoteView extends AndroidViewModel {
 
     private NoteRepository mRepository;
-    private LiveData<List<Note>> mAllTasks;
+    private LiveData<List<Note>> mAllNotes;
 
     public NoteView(Application application){
         super(application);
         mRepository = new NoteRepository(application);
-        mAllTasks = mRepository.getAllNotes();
+        mAllNotes = mRepository.getAllNotes();
     }
 
     public LiveData<List<Note>> getAllNote() {
-        return mAllTasks;
+        return mAllNotes;
     }
 
     public void insert(Note task) {

@@ -3,7 +3,6 @@ package com.example.nos951.noteapplication.ListArrayAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -16,19 +15,19 @@ import com.example.nos951.noteapplication.entity.Note;
 import java.util.List;
 
 public class NoteListArrayAdapter extends ArrayAdapter {
-    private List<Note> mTasks;
+    private List<Note> mNoteList;
 
     public NoteListArrayAdapter(Context context, int resource, List<Note> notes) {
         super(context, resource, notes);
-        mTasks = notes;
+        mNoteList = notes;
     }
 
     public int getCount(){
-       return mTasks.size();
+       return mNoteList.size();
     }
 
     public Note getNote(int position){
-        return mTasks.get(position);
+        return mNoteList.get(position);
     }
 
     @Override
